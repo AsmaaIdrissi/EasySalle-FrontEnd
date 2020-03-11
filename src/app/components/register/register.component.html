@@ -1,5 +1,6 @@
-<h2>Créer un compte</h2>
+<div id="register-page">
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <h2>Créer un compte</h2>
     <div class="form-group">
         <label for="firstName">Nom</label>
         <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
@@ -30,11 +31,12 @@
             <div *ngIf="f.password.errors.minlength">Le mot de passe doit contenir 6 caractères au minimum</div>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group register-btns">
         <button [disabled]="loading" class="btn btn-primary">
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-            S'inscrir
+            S'inscrire
         </button>
         <a routerLink="/login" class="btn btn-link">Annuler</a>
     </div>
 </form>
+</div>

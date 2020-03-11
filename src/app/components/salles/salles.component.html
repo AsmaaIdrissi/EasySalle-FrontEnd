@@ -2,11 +2,11 @@
   <h2>Liste de Salles</h2>
   <ul>
     <li *ngFor="let salle of salles" class="salle">
-        <a [routerLink]="['/salle', salle._id]">
-        <div class="image"> <img src="{{ url+'get-image/'+salle.image}}" *ngIf="salle.image"/></div>
+        <a [routerLink]="['/salle', salle.id]">
+        <div class="image"> <img [src]="transform(salle)" /></div>
     <h3>{{ salle.name }}</h3>
     <p>{{ salle.capacite }}</p>
-    <p>{{ salle.type_evenement }}</p>
+    <p>{{ salle.typeEvenement }}</p>
   </a>
     </li>
   </ul>

@@ -7,8 +7,8 @@ export class Project{
         public ville: string,
         public code_postal: string,
         public capacite: string,
-        public type_evenement: string,
-        public services_proposes: string,
+        public typeEvenement: string,
+        public servicePropose: string,
         public  description: string,
         public disponibilite: string,
         public image: string

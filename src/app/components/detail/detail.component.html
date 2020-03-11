@@ -1,13 +1,13 @@
-<div class="container" *ngIf="salle">
+<div class="detail-salle container" *ngIf="salle">
 
-<div class="image" *ngIf="salle.image">
-   <img src="{{ url+'get-image/'+salle.image}}"/>
+<div class="image" *ngIf="salle.picture">
+  <img [src]="transform(salle)" />
   </div>
 <div class="data" >
 <h1 >{{ salle.name }}</h1>
 <p>{{ salle.description }}</p>
 <p>{{ salle.capacite }}</p>
-<p>{{ salle.type_evenement}}</p>
+<p>{{ salle.typeEvenement}}</p>
 <p>{{ salle.ville }}</p><hr/>
 <a href="https://www.google.fr/maps/@44.0467456,4.7808512,14z" class="button-geo">Geolocalisation</a>
 
@@ -21,7 +21,7 @@
     <a (click)="setConfirm(false)" class="button-edit">Cancel</a>
     <a (click)="deleteProject(project._id)" class="button-delete">Definitively eliminate</a>
   </p>-->
-  <a (click)="redirigerReservation()" class="button-edit">Reserver</a>
+  <a (click)="redirigerReservation(salle.id)" class="button-edit">Reserver</a>
 
 </div>
 </div>

@@ -3,16 +3,18 @@
   <li  id="logo"><a href="#"><img src="../assets/css/img/logo.png"></a></li>
   <li><a [routerLink]= "['/about-me']" [routerLinkActive]="['actived']">Accueil</a></li>
   <li><a [routerLink]= "['/salles']" [routerLinkActive]="['actived']">Liste de Salles</a></li>
-  <li *ngIf="!currentUser"><a [routerLink]= "['/login']" [routerLinkActive]="['actived']">S'identifier</a></li>
   <li *ngIf="currentUser"><a [routerLink]= "['/create']" [routerLinkActive]="['actived']">Ajouter une Salle</a></li>
   <li><a [routerLink]= "['/search']" [routerLinkActive]="['actived']">Rechercher</a></li>
   <li><a [routerLink]= "['/contact']" [routerLinkActive]="['actived']">Contact</a></li>
-  
+  <li *ngIf="!currentUser"><a [routerLink]= "['/login']" [routerLinkActive]="['actived']">S'identifier</a></li>
+  <li *ngIf="currentUser"><a (click)="logout()" >Se déconnecter</a></li>
+
+
 </ul>
 </header>
 <section id="content">
 <router-outlet></router-outlet>
 </section>
 <footer>
-  
+
 </footer>

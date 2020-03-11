@@ -28,7 +28,7 @@
     </p>
     <p>
       <label for="code_postal">Code Postal</label>
-      <input type="text" name="code_postal" #code_postal="ngModel" [(ngModel)]="salle.code_postal" required />
+      <input type="text" name="code_postal" #code_postal="ngModel" [(ngModel)]="salle.codePostal" required />
       <span class="form_error" *ngIf="code_postal.touched && !code_postal.valid">Le Code Postal est obligatoire</span>
     </p>
     <p>

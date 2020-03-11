@@ -8,7 +8,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class SidebarComponent implements OnInit {
 
-  public searchString:String;
+  public searchString:string;
 
   constructor(
     private _route:Router,

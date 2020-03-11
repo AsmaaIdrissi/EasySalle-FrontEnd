@@ -6,44 +6,46 @@ import { Global } from './global';
 
 
 @Injectable()
-export class ReservationService{
+export class ReservationService {
     public url: string;
 
     constructor(
         private _http: HttpClient
-    ){
-        this.url=Global.url;
+    ) {
+        this.url = Global.url;
 
     }
 
-   
-    saveResevation(reservation:Reservation):Observable<any>{
-        let params=JSON.stringify(reservation);
-        let headers=new HttpHeaders().set('Content-Type', 'application/json');
 
-        return this._http.post(this.url+'save-reservation', params, {headers: headers});
+    saveResevation(idSalle: number, reservation: Reservation): Observable<any> {
+        const params = JSON.stringify({...reservation, idSalle
+        }
+        );
+        const headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+        return this._http.post(this.url  + 'reservation/creer', params, {headers});
     }
 
-    getReservations(): Observable<any>{
-        let headers=new HttpHeaders().set('Content-Type', 'application/json');
-        return this._http.get(this.url+'reservations', {headers: headers});
+    getReservations(): Observable<any> {
+        const headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.get(this.url + 'reservations', {headers});
     }
-    getReservation(id): Observable<any>{
-        let headers= new HttpHeaders().set('Content-Type', 'application/json');
-        return this._http.get(this.url+'reservation/'+id, {headers: headers});
-    }
-
-    deleteReservation(id):Observable<any>{
-        let headers=new HttpHeaders().set('Content-Type', 'application/json');
-        return this._http.delete(this.url+'reservation/'+id, {headers: headers});
-
+    getReservation(id): Observable<any> {
+        const headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.get(this.url + 'reservation/' + id, {headers});
     }
 
-    updateReservation(reservation):Observable<any>{
-        let params = JSON.stringify(reservation);
-        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    deleteReservation(id): Observable<any> {
+        const headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.delete(this.url + 'reservation/' + id, {headers});
 
-        return this._http.put(this.url+'reservation/'+reservation._id, params, {headers: headers});
+    }
+
+    updateReservation(reservation): Observable<any> {
+        const params = JSON.stringify(reservation);
+        const headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+        return this._http.put(this.url + 'reservation/' + reservation._id, params, {headers});
     }
 
 }

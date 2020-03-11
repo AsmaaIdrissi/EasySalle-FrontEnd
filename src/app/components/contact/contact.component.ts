@@ -13,16 +13,16 @@ import { Global } from '../../services/global';
 })
 export class ContactComponent implements OnInit {
 
-  public title:String;
-  public paragraphe:String;
+  public title:string;
+  public paragraphe:string;
   public contact:Contact;
-  public status:String;
-  
- 
+  public status:string;
+
+
   constructor(
     private _contactService: ContactService
   )
-   { 
+   {
   this.title="Formulaire de Contact";
   this.paragraphe="Si vous avez rencontré un problème lors de votre experience avec EasySalle, veuillez nous envoyer un message";
 
@@ -31,7 +31,7 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
 
    //alert(this.textos.nativeElement.textContent);
-    
+
   }
   onSubmit(form){
 
@@ -45,15 +45,15 @@ export class ContactComponent implements OnInit {
         console.log(<any>error);
 
       }
-     
+
 
     )
- 
+
 
 
   }
- 
 
-  
- 
+
+
+
 }

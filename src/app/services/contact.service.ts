@@ -9,7 +9,7 @@ import { Global } from './global';
 @Injectable()
 export class ContactService{
 
-    public url:String='lifasan@hotmail.com'
+    public url:string='lifasan@hotmail.com'
 
     constructor(
         private _http:HttpClient
@@ -24,7 +24,7 @@ export class ContactService{
        let headers=new HttpHeaders().set('Content-Type', 'application/json');
 
        return this._http.post(this.url+'save-contact', params, {headers:headers});
-   
+
 
     }
 

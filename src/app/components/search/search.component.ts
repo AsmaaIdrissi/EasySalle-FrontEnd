@@ -13,14 +13,14 @@ import { SallesComponent } from '../salles/salles.component';
 export class SearchComponent implements OnInit {
 
   public salle:Salle;
-  public title:String;
+  public title:string;
   public salles:Salle[];
 
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
     private _salleService: SalleService
-  ) { 
+  ) {
     this.title="Salles trouvés pour votre recherche";
   }
 
@@ -36,17 +36,17 @@ export class SearchComponent implements OnInit {
           }else{
             this.salles=[];
           }
-            
+
       },error=>{ console.log(<any>error);
         this.salles=[];
-      
+
 
       })
 
-      
+
     });
   }
-  
-  
+
+
 
 }
